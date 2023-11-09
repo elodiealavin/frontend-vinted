@@ -48,7 +48,7 @@ const Home = () => {
               <section key={offer._id}>
                 <Link to={`/offer/${num}`}> liens de navigation</Link>
                 <div>
-                  <img src={offer.owner.account.product_image.url} alt="" />
+                  <img src={offer.owner.account.avatar.secure_url} alt="" />
                   <span>{offer.owner.account.username}</span>
                 </div>
                 <span>{offer.product_price} €</span>
