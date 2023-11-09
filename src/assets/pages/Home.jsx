@@ -43,21 +43,22 @@ const Home = () => {
             </div>
           </div>
 
+          <Link to={`/offer/${num}`}> liens de navigation</Link>
+
           <article>
             <div className="card-container" />
             {data.offers.map((offer) => {
               return (
-                <div>
+                <section key={offer._id}>
                   <p>{offer._id}</p>
-                  <p>{offer.product_name}</p>
+                  {/* <p>{offer.product_name}</p>
                   <p>{offer.product_description}</p>
-                  <p>{offer.product_price}</p>
-                </div>
+                  <p>{offer.product_price}</p> */}
+                </section>
               );
             })}
           </article>
         </div>
-        <Link to={`/offer/${num}`}> liens de navigation</Link>
       </main>
     );
   };
