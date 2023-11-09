@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
-  const num = 1;
+  // const num = 1;
 
-  const { id } = useParams();
-  console.log(id);
+  const params = useParams();
+  const id = params.id;
+  console.log(params);
 
   const [data, setData] = useState();
   console.log(data);
@@ -46,16 +47,22 @@ const Home = () => {
           {data.offers.map((offer) => {
             return (
               <section key={offer._id}>
-                <Link to={`/offer/${num}`}> liens de navigation</Link>
-                <div>
-                  <img src={offer.owner.account.avatar.secure_url} alt="" />
-                  <span>{offer.owner.account.username}</span>
-                </div>
-                <span>{offer.product_price} €</span>
-                <div>
-                  <img src={offer.product_image.url} alt="" />
-                </div>
-                <span>{offer.product_details[0].MARQUE}</span>
+                <Link to={`/offer/${offer._id}`}>
+                  <div>
+                    {offer.owner.account.avatar && (
+                      <img src={offer.owner.account.avatar.secure_url} alt="" />
+                    )}
+                    <span>{offer.owner.account.username}</span>
+                  </div>
+                  <div>
+                    <img src={offer.product_image.url} alt="" />
+                  </div>
+                  <span>{offer.product_price} €</span>
+                  <div>
+                    <span>{offer.product_details[1].TAILLE}</span>
+                    <span>{offer.product_details[0].MARQUE}</span>
+                  </div>
+                </Link>
               </section>
             );
           })}
