@@ -8,25 +8,6 @@ import Home from "./assets/pages/Home";
 import Offer from "./assets/pages/Offer";
 
 function App() {
-  const [data, setData] = useState();
-  // const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
-        );
-        console.log(response.data);
-
-        setData(response.data);
-      } catch (error) {
-        // console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
-
   return (
     <Router>
       <Header />

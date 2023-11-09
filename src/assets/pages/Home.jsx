@@ -42,16 +42,20 @@ const Home = () => {
           </div>
         </div>
 
-        <Link to={`/offer/${num}`}> liens de navigation</Link>
-
         <article className="card-container">
           {data.offers.map((offer) => {
             return (
-              <section key={offer.account}>
-                <p>{offer._id}</p>
-                {/* <p>{offer.product_name}</p>
-                  <p>{offer.product_description}</p>
-                  <p>{offer.product_price}</p> */}
+              <section key={offer._id}>
+                <Link to={`/offer/${num}`}> liens de navigation</Link>
+                <div>
+                  <img src={offer.owner.account.product_image.url} alt="" />
+                  <span>{offer.owner.account.username}</span>
+                </div>
+                <span>{offer.product_price} €</span>
+                <div>
+                  <img src={offer.product_image.url} alt="" />
+                </div>
+                <span>{offer.product_details[0].MARQUE}</span>
               </section>
             );
           })}
