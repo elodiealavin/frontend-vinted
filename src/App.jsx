@@ -3,9 +3,9 @@ import axios from "axios";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import Header from "./assets/Components/Header";
 import Home from "./assets/pages/Home";
 import Offer from "./assets/pages/Offer";
-import Header from "./assets/Components/Header";
 
 function App() {
   const [data, setData] = useState();

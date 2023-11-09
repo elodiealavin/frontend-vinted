@@ -49,12 +49,12 @@ const Home = () => {
             <div className="card-container" />
             {data.offers.map((offer) => {
               return (
-                <section key={offer._id}>
-                  <p>{offer._id}</p>
+                <sectio key={offer.account}>
+                  <p>{offer.owner}</p>
                   {/* <p>{offer.product_name}</p>
                   <p>{offer.product_description}</p>
                   <p>{offer.product_price}</p> */}
-                </section>
+                </sectio>
               );
             })}
           </article>
