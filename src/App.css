@@ -16,7 +16,7 @@ header {
   margin-left: 20px;
 }
 
-input {
+header input {
   font-size: 16px;
   height: 37px;
   width: 590px;
@@ -59,4 +59,22 @@ input {
 .ready button {
   background-color: blueviolet;
   margin-top: 20px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+form h2 {
+  font-size: 60px;
+}
+
+form input {
+  font-size: 30px;
+  border: none;
+  border-bottom: 1px solid pink;
 }
