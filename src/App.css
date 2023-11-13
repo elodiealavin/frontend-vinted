@@ -48,6 +48,17 @@ header {
   border-radius: 5px;
   outline: none;
 }
+
+.deconected {
+  margin-left: 20px;
+  background: #2cb1ba;
+  color: white;
+  border: 1px solid #2cb1ba;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+}
 header input {
   font-size: 16px;
   height: 37px;
@@ -155,6 +166,57 @@ form p {
   margin-top: 20px;
   outline: none;
   width: 100%;
+}
+
+/* --------------------- */
+/* --------- Home Offer------------ */
+/* --------------------- */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0 6px 16px;
+}
+.avatar-profil {
+  /* background-color: aquamarine; */
+  font-size: 20px;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.picture-profil {
+  border-radius: 50px;
+  height: 40px;
+}
+.pictures-offers {
+  border: 2px red solid;
+  height: 360px;
+  width: 230px;
+  display: flex;
+}
+
+.picture-offer {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.price-offer {
+  font-size: 15px;
+  color: grey;
+}
+
+.text-offer > span {
+  font-size: 15px;
+  color: grey;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --------------------- */

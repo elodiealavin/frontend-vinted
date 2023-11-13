@@ -7,11 +7,13 @@ const Header = ({ token, handleToken }) => {
   return (
     <header>
       <div>
-        <img
-          className="logo"
-          src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            className="logo"
+            src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
+            alt=""
+          />
+        </Link>
       </div>
       <div>
         <input
@@ -27,6 +29,7 @@ const Header = ({ token, handleToken }) => {
 
         {token ? (
           <button
+            className="deconected"
             onClick={() => {
               handleToken(null);
             }}
@@ -41,7 +44,9 @@ const Header = ({ token, handleToken }) => {
       </div>
 
       <div>
-        <button className="sold">vends tes articles</button>
+        <Link to="/publish">
+          <button className="sold">vends tes articles</button>
+        </Link>
       </div>
     </header>
   );

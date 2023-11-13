@@ -48,17 +48,27 @@ const Home = () => {
             return (
               <section key={offer._id}>
                 <Link to={`/offer/${offer._id}`}>
-                  <div>
+                  <div className="avatar-profil">
                     {offer.owner.account.avatar && (
-                      <img src={offer.owner.account.avatar.secure_url} alt="" />
+                      <img
+                        className="picture-profil"
+                        src={offer.owner.account.avatar.secure_url}
+                        alt=""
+                      />
                     )}
                     <span>{offer.owner.account.username}</span>
                   </div>
-                  <div>
-                    <img src={offer.product_image.url} alt="" />
+
+                  <div className="pictures-offers">
+                    <img
+                      className="picture-offer"
+                      src={offer.product_image.url}
+                      alt=""
+                    />
                   </div>
-                  <span>{offer.product_price} €</span>
-                  <div>
+
+                  <div className="text-offer">
+                    <span className="price-offer">{offer.product_price} €</span>
                     <span>{offer.product_details[1].TAILLE}</span>
                     <span>{offer.product_details[0].MARQUE}</span>
                   </div>

@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
-const Publish = () => {
+const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
   const [picture, setPicture] = useState();
   const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
@@ -12,9 +12,10 @@ const Publish = () => {
   const [color, setColor] = useState("");
   const [etat, setEtat] = useState("");
   const [city, setCity] = useState("");
-  const [price, setPrice] = useNavigate();
+  const [price, setPrice] = useState();
 
   const navigate = useNavigate();
+  console.log(token);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,14 +23,15 @@ const Publish = () => {
     try {
       const formData = new FormData();
       console.log(FormData);
-      formData.apprend("title", title);
-      formData.apprend("description", decription);
-      formData.apprend("bran", brand);
-      formData.apprend("size", size);
-      formData.apprend("color", color);
-      formData.apprend("etat", etat);
-      formData.apprend("city", city);
-      formData.apprend("price", price);
+      formData.append("title", title);
+      formData.append("description", decription);
+      formData.append("bran", brand);
+      formData.append("size", size);
+      formData.append("color", color);
+      formData.append("etat", etat);
+      formData.append("city", city);
+      formData.append("price", price);
+      formData.append("picture", picture);
 
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
@@ -42,24 +44,37 @@ const Publish = () => {
         }
       );
 
+      console.log(response.data);
+      setPictureFromCloudinary(response.data.secure_url);
+
       navigate("/login");
 
       //   console.log(response.data);
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     }
   };
 
   return (
     <div>
-      <main>
+      <form onSubmit={handleSubmit}>
         <h1> Vends ton arcticle</h1>
         <div className="picture-offer">
-          <input type="file" />
+          <input
+            type="file"
+            onChange={(event) => {
+              // console.log(event);
+              setPicture(event.target.files[0]);
+            }}
+          />
+          {pictureFromCloudinary && (
+            <img src={pictureFromCloudinary} alt="veste" />
+          )}
         </div>
         <input
           type="text"
           placeholder="title"
+          value={title}
           onChange={(event) => {
             setTitle(event.target.value);
           }}
@@ -67,6 +82,7 @@ const Publish = () => {
         <input
           type="text"
           placeholder="description"
+          value={decription}
           onChange={(event) => {
             setDecription(event.target.value);
           }}
@@ -75,6 +91,7 @@ const Publish = () => {
           <input
             type="text"
             placeholder="brand"
+            value={brand}
             onChange={(event) => {
               setBrand(event.target.value);
             }}
@@ -82,6 +99,7 @@ const Publish = () => {
           <input
             type="text"
             placeholder="size"
+            value={size}
             onChange={(event) => {
               setSize(event.target.value);
             }}
@@ -89,6 +107,7 @@ const Publish = () => {
           <input
             type="text"
             placeholder="color"
+            value={color}
             onChange={(event) => {
               setColor(event.target.value);
             }}
@@ -96,6 +115,7 @@ const Publish = () => {
           <input
             type="text"
             placeholder="etat"
+            value={etat}
             onChange={(event) => {
               setEtat(event.target.value);
             }}
@@ -103,6 +123,7 @@ const Publish = () => {
           <input
             type="text"
             placeholder="city"
+            value={city}
             onChange={(event) => {
               setCity(event.target.value);
             }}
@@ -112,6 +133,7 @@ const Publish = () => {
           <input
             className="price"
             placeholder="price"
+            value={price}
             onChange={(event) => {
               setPrice(event.target.value);
             }}
@@ -121,9 +143,9 @@ const Publish = () => {
         <label>Je suis intéressé(e) par les échanges</label>
 
         <div className="validate">
-          <input type="text" value="Ajouter" />
+          <input type="submit" value="Ajouter" />
         </div>
-      </main>
+      </form>
     </div>
   );
 };

@@ -47,7 +47,6 @@ const Login = ({ handleToken }) => {
         />
         <input className="online" type="submit" value="S'inscrire " />
         <Link className="link" to="/signup">
-          {" "}
           Pas encore de compte ? Inscris-toi !
         </Link>
       </form>
