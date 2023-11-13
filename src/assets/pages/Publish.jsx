@@ -141,10 +141,11 @@ const Publish = ({ token }) => {
         </div>
         <input type="checkbox" />
         <label>Je suis intéressé(e) par les échanges</label>
-
-        <div className="validate">
-          <input type="submit" value="Ajouter" />
-        </div>
+        <Link to="/login">
+          <div className="validate">
+            <input type="submit" value="Ajouter" />
+          </div>
+        </Link>
       </form>
     </div>
   );
