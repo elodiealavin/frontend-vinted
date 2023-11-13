@@ -1,6 +1,8 @@
 // import logo from "./assets/logo.vinted.png";
 
-const Header = () => {
+import { Link } from "react-router-dom";
+
+const Header = (token, handleToken) => {
   return (
     <header>
       <div>
@@ -11,11 +13,27 @@ const Header = () => {
         />
       </div>
       <div>
-        <input type="text" placeholder="Recherche des articles" />
+        <input
+          type="text"
+          placeholder="Recherche des articles"
+          // value={search}
+        />
       </div>
       <div className="header-button-log-sign">
         <button className="sign-up"> s'incrire</button>
-        <button className="login">se connecter</button>
+        {token ? (
+          <button
+            onClick={() => {
+              handleToken(null);
+            }}
+          >
+            Déconnexion
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="login">se connecter</button>
+          </Link>
+        )}
       </div>
       <div>
         <button className="sold">vends tes articles</button>

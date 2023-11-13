@@ -5,7 +5,7 @@ import axios from "axios";
 const Offer = () => {
   const params = useParams();
   const id = params.id;
-  console.log(id);
+  // console.log(id);
 
   const [data, setData] = useState();
   // console.log("ici =>", data);
@@ -19,7 +19,7 @@ const Offer = () => {
         const response = await axios.get(
           `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
-        console.log(response.data);
+        // console.log(response.data);
 
         setData(response.data);
         setIsLoading(false);
