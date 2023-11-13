@@ -12,26 +12,6 @@ const Signup = ({ handleToken }) => {
 
   const navigate = useNavigate();
 
-  // const handleEmailChange = (event) => {
-  //   const value = event.target.value;
-  //   setEmail(value);
-  // };
-
-  // const handlePasswordChange = (event) => {
-  //   const value = event.target.value;
-  //   setPassword(value);
-  // };
-
-  // const handleUsernameChange = (event) => {
-  //   const value = event.target.value;
-  //   setUsername(value);
-  // };
-
-  // const handleNewsletterChange = (event) => {
-  //   const value = event.target.value;
-  //   setNewlestter(value);
-  // };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email, password, username, newlestter);
@@ -63,8 +43,8 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
+    <main className="signup-container">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <h2>S'inscrire</h2>
         <input
           type="text"
@@ -82,12 +62,21 @@ const Signup = ({ handleToken }) => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <input type="checkbox" id="checkbox" />
-        <label>S'inscrire à notre newlestter</label>
-        <input type="submit" value="S'inscrire " />
+        <div className="checkbox-container">
+          <div>
+            <input type="checkbox" id="checkbox" />
+            <label>S'inscrire à notre newlestter</label>
+          </div>
+          <p>
+            En m'inscrivant je confirme avoir lu et accepté les Termes &
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
+        </div>
+        <input className="submit" value="S'inscrire" type="submit" />
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
     </main>
   );
 };

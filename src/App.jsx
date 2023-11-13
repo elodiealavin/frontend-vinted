@@ -7,6 +7,7 @@ import Header from "./assets/Components/Header";
 import Home from "./assets/pages/Home";
 import Offer from "./assets/pages/Offer";
 import Signup from "./assets/pages/Signup";
+import Login from "./assets/pages/Login";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -23,11 +24,12 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header token={token} handleToken={handleToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
+        <Route path="/login" element={<Login handleToken={handleToken} />} />
       </Routes>
     </Router>
   );

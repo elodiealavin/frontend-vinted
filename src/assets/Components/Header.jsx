@@ -2,7 +2,8 @@
 
 import { Link } from "react-router-dom";
 
-const Header = (token, handleToken) => {
+const Header = ({ token, handleToken }) => {
+  console.log(handleToken);
   return (
     <header>
       <div>
@@ -20,7 +21,10 @@ const Header = (token, handleToken) => {
         />
       </div>
       <div className="header-button-log-sign">
-        <button className="sign-up"> s'incrire</button>
+        <Link to="/signup">
+          <button className="sign-up">s'inscrire</button>
+        </Link>
+
         {token ? (
           <button
             onClick={() => {
@@ -35,6 +39,7 @@ const Header = (token, handleToken) => {
           </Link>
         )}
       </div>
+
       <div>
         <button className="sold">vends tes articles</button>
       </div>

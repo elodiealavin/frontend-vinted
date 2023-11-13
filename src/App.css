@@ -1,7 +1,11 @@
+/* --------------------- */
+/* --------- Home Header ------------ */
+/* --------------------- */
+
 header {
   display: flex;
   justify-content: space-between;
-  background-color: bisque;
+  /* background-color: bisque; */
   align-items: center;
   margin: auto;
   padding: 10px 0;
@@ -12,10 +16,38 @@ header {
   height: 40px;
 }
 
-.header-button-log-sign .login {
+.header-button-log-sign .sign-up {
   margin-left: 20px;
+  background: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
 }
 
+.header-button-log-sign .login {
+  margin-left: 20px;
+  background: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.sold {
+  margin-left: 20px;
+  background: #2cb1ba;
+  color: white;
+  border: 1px solid #2cb1ba;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+}
 header input {
   font-size: 16px;
   height: 37px;
@@ -26,6 +58,10 @@ header input {
   background-color: #f5f6f7;
   padding-left: 40px;
 }
+
+/* --------------------- */
+/* --------- Home Hero ------------ */
+/* --------------------- */
 
 .picture-background {
   width: 100%;
@@ -61,20 +97,106 @@ header input {
   margin-top: 20px;
 }
 
-form {
+/* --------------------- */
+/* --------- Sign-up ------------ */
+/* --------------------- */
+
+.signup-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  border: 1px solid sandybrown;
   margin-top: 100px;
 }
 
-form h2 {
-  font-size: 60px;
+.signup-form {
+  /* background-color: lightpink; */
+  /* wwidth: 280px; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 300px;
 }
 
-form input {
-  font-size: 30px;
+form h2 {
+  font-size: 24px;
+}
+
+input {
+  /* background: lightseagreen; */
+  padding: 1px 0px;
+  width: 270px;
+}
+
+.signup-form input {
   border: none;
   border-bottom: 1px solid pink;
+  margin-bottom: 20px;
+  height: 35px;
+}
+
+.checkbox-container {
+  border: 1px salmon solid;
+}
+.checkbox-container > div {
+  display: flex;
+}
+
+form p {
+  padding: 10px;
+  color: gray;
+  font-size: 12px;
+}
+.submit {
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  height: 45px;
+  margin-top: 20px;
+  outline: none;
+  width: 100%;
+}
+
+/* --------------------- */
+/* --------- Login ------------ */
+/* --------------------- */
+
+.login-container {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form p {
+  font-size: 24px;
+  color: black;
+}
+
+.online {
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  height: 45px;
+  margin-top: 20px;
+  outline: none;
+  width: 100%;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 1px solid pink;
+  margin-bottom: 20px;
+  height: 35px;
 }
