@@ -62,10 +62,10 @@ const Signup = ({ handleToken }) => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <div className="checkbox-container">
-          <div>
+        <div>
+          <div className="checkbox-container">
             <input type="checkbox" id="checkbox" />
-            <label>S'inscrire à notre newlestter</label>
+            <span>S'inscrire à notre newlestter</span>
           </div>
           <p>
             En m'inscrivant je confirme avoir lu et accepté les Termes &
@@ -75,7 +75,9 @@ const Signup = ({ handleToken }) => {
         </div>
         <input className="submit" value="S'inscrire" type="submit" />
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+        <Link className="link" to="/login">
+          Tu as déjà un compte ? Connecte-toi !
+        </Link>
       </form>
     </main>
   );

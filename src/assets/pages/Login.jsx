@@ -46,7 +46,10 @@ const Login = ({ handleToken }) => {
           onChange={(event) => setPassword(event.target.value)}
         />
         <input className="online" type="submit" value="S'inscrire " />
-        <Link to="/signup"> Pas encore de compte ? Inscris-toi !</Link>
+        <Link className="link" to="/signup">
+          {" "}
+          Pas encore de compte ? Inscris-toi !
+        </Link>
       </form>
     </main>
   );

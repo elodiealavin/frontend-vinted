@@ -93,7 +93,7 @@ header input {
 }
 
 .ready button {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   margin-top: 20px;
 }
 
@@ -104,7 +104,7 @@ header input {
 .signup-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid sandybrown;
+  /* border: 1px solid sandybrown; */
   margin-top: 100px;
 }
 
@@ -137,9 +137,6 @@ input {
 }
 
 .checkbox-container {
-  border: 1px salmon solid;
-}
-.checkbox-container > div {
   display: flex;
 }
 
@@ -165,7 +162,7 @@ form p {
 /* --------------------- */
 
 .login-container {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,4 +196,8 @@ form p {
   border-bottom: 1px solid pink;
   margin-bottom: 20px;
   height: 35px;
+}
+
+.link {
+  color: gray;
 }
