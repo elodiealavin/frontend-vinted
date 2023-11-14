@@ -46,22 +46,28 @@ const Signup = ({ handleToken }) => {
     <main className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>S'inscrire</h2>
-        <input
-          type="text"
-          placeholder="username"
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
+        <div className="signup">
+          <input
+            className="username"
+            type="text"
+            placeholder="username"
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <input
+            className="email"
+            type="text"
+            placeholder="email"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            className="password"
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
+
         <div>
           <div className="checkbox-container">
             <input type="checkbox" id="checkbox" />

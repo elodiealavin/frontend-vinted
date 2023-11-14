@@ -114,13 +114,83 @@ header input {
   padding: 25px;
   margin-top: 50px;
   margin-left: 200px;
+  border-radius: 10px;
   /* position: absolute; */
   /* top: 75px; */
 }
 
 .ready button {
   /* background-color: blueviolet; */
+
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  height: 45px;
   margin-top: 20px;
+  outline: none;
+  width: 100%;
+}
+
+.ready button:hover {
+  background-color: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+}
+
+/* --------------------- */
+/* --------- Home Offer------------ */
+/* --------------------- */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0 6px 16px;
+}
+.avatar-profil {
+  /* background-color: aquamarine; */
+  font-size: 20px;
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.picture-profil {
+  border-radius: 50px;
+  height: 35px;
+}
+.pictures-offers {
+  /* border: 2px red solid; */
+  height: 360px;
+  width: 230px;
+  display: flex;
+  object-fit: cover;
+}
+
+.picture-offer {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.price-offer {
+  font-size: 15px;
+  color: grey;
+}
+
+.text-offer > span {
+  font-size: 15px;
+  color: grey;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --------------------- */
@@ -143,39 +213,61 @@ header input {
   align-items: center;
   margin: auto;
   width: 300px;
+  border: white 1px solid;
 }
 
 form h2 {
   font-size: 24px;
+  /* background-color: lightgrey; */
+  margin-bottom: 20px;
 }
-
-input {
-  /* background: lightseagreen; */
-  padding: 1px 0px;
-  width: 270px;
+/* 
+.signup-button {
+  background: lightseagreen; */
+/* padding: 1px 0px;
+  width: 200px;
 }
-input:hover {
+.signup-button:hover {
   background-color: white;
   color: #2cb1ba;
   border: 1px solid #2cb1ba;
-}
+} */
 
-.signup-form > input {
-  border: none;
-  border-bottom: 1px solid pink;
+.signup {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   height: 35px;
+  background-color: azure;
+}
+.username {
+  border: none;
+  border-bottom: lightpink 1px solid;
+  width: 220px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.email {
+  border: none;
+  border-bottom: lightpink 1px solid;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
+.password {
+  border: none;
+  border-bottom: lightpink 1px solid;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
 .checkbox-container {
+  margin-top: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-form p {
-  padding: 10px;
-  color: gray;
-  font-size: 12px;
-}
 .submit {
   background-color: #2cb1ba;
   border: none;
@@ -185,59 +277,19 @@ form p {
   height: 45px;
   margin-top: 20px;
   outline: none;
-  width: 100%;
+  width: 200px;
+  margin-bottom: 10px;
+}
+.submit:hover {
+  background-color: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
 }
 
-/* --------------------- */
-/* --------- Home Offer------------ */
-/* --------------------- */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  padding: 0 6px 16px;
-}
-.avatar-profil {
-  /* background-color: aquamarine; */
-  font-size: 20px;
+form p {
+  padding: 10px;
   color: gray;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 40px;
-  margin-bottom: 5px;
-}
-
-.picture-profil {
-  border-radius: 50px;
-  height: 40px;
-}
-.pictures-offers {
-  border: 2px red solid;
-  height: 360px;
-  width: 230px;
-  display: flex;
-}
-
-.picture-offer {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-.price-offer {
-  font-size: 15px;
-  color: grey;
-}
-
-.text-offer > span {
-  font-size: 15px;
-  color: grey;
-  display: flex;
-  flex-direction: column;
+  font-size: 12px;
 }
 
 /* --------------------- */
@@ -273,8 +325,13 @@ form p {
   outline: none;
   width: 100%;
 }
+.login-form {
+  width: 300px;
+  border: none;
+}
 
 .login-form input {
+  /* background-color: #2cb1ba; */
   border: none;
   border-bottom: 1px solid pink;
   margin-bottom: 20px;
@@ -283,4 +340,212 @@ form p {
 
 .link {
   color: gray;
+  margin: auto;
+}
+
+/* --------------------- */
+/* --------- Offer------------ */
+/* --------------------- */
+
+.offer-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  /* border: 1px solid red; */
+}
+
+img {
+  height: 600px;
+}
+
+.offer-description {
+  /* border: 1px lightseagreen solid; */
+  height: 600px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .offer-description {
+  background-color: lightpink;
+  height: 600px;
+} */
+
+.description-user img {
+  height: 50px;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.offer-map span {
+  width: 200px;
+  /* background-color: aquamarine; */
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.elem-offer {
+  color: rgb(155, 153, 153);
+}
+
+.offer-product-price {
+  font-size: 40px;
+  padding: 30px;
+}
+
+.description-user {
+  border-top: 1px grey solid;
+  margin-top: 80px;
+  padding: 30px;
+}
+.offer-title {
+  padding: 10px;
+  /* margin-bottom: 20px; */
+  font-size: 20px;
+}
+.user-offer {
+  display: flex;
+  /* justify-content: center; */
+  padding: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.offer-detail {
+  color: grey;
+  font-size: 20px;
+}
+
+.offer-sold {
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-left: 120px;
+  height: 45px;
+  width: 250px;
+}
+
+.offer-sold:hover {
+  background-color: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
+}
+
+/* --------------------- */
+/* --------- Publish------------ */
+/* --------------------- */
+
+.container-sold {
+  background-color: #d5e2e9;
+}
+
+form {
+  /* border: 1px lightgreen solid; */
+  width: 1285px;
+  margin: auto;
+  border: 1px lightslategray solid;
+}
+form > h1 {
+  font-size: 30px;
+  padding: 50px;
+  margin: auto;
+}
+
+.picture-sold {
+  border: 1px lightslategray solid;
+  width: 1280px;
+  height: 250px;
+  margin: auto;
+}
+
+.picture-sold label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 80px;
+  background-color: white;
+  color: #2cb1ba;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+}
+.picture-sold label:hover {
+  color: gray;
+}
+
+.insertion {
+  margin-top: 30px;
+  /* border: 1px solid lightseagreen; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px lightslategray solid;
+}
+.title {
+  width: 100%;
+  height: 70px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.sold-detail {
+  border: 1px lightslategray solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.sold-detail input {
+  width: 100%;
+  height: 70px;
+}
+
+.sold-price {
+  border: 1px lightslategray solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.price {
+  width: 100%;
+  height: 70px;
+}
+
+.coche {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.validate {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.validate input {
+  background-color: #2cb1ba;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-left: 120px;
+  height: 45px;
+  width: 100px;
+}
+
+.validate input:hover {
+  background-color: white;
+  color: #2cb1ba;
+  border: 1px solid #2cb1ba;
 }

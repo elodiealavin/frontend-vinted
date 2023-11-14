@@ -46,7 +46,7 @@ const Publish = ({ token }) => {
       );
 
       console.log(response.data);
-      setPictureFromCloudinary(response.data.secure_url);
+      //   setPictureFromCloudinary(response.data.secure_url);
 
       navigate("/");
 
@@ -57,10 +57,11 @@ const Publish = ({ token }) => {
   };
 
   return token ? (
-    <div>
+    <div className="container-sold">
       <form onSubmit={handleSubmit}>
         <h1> Vends ton arcticle</h1>
-        <div className="picture-offer">
+        <div className="picture-sold">
+          <label htmlFor="picture-input"> + Choisissez une image</label>
           <input
             style={{ display: "none" }}
             id="picture-input"
@@ -79,27 +80,29 @@ const Publish = ({ token }) => {
             alt="test"
           />
         )}
+        <div className="insertion">
+          <input
+            className="title"
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
 
-        <input
-          type="text"
-          placeholder="title"
-          value={title}
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
-
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          value={decription}
-          onChange={(event) => {
-            setDecription(event.target.value);
-          }}
-        ></textarea>
-        {/* <input
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Description"
+            value={decription}
+            onChange={(event) => {
+              setDecription(event.target.value);
+            }}
+          ></textarea>
+          {/* <input
           type="text"
           placeholder="description"
           value={decription}
@@ -107,11 +110,12 @@ const Publish = ({ token }) => {
             setDecription(event.target.value);
           }}
         /> */}
+        </div>
 
-        <div>
+        <div className="sold-detail">
           <input
             type="text"
-            placeholder="brand"
+            placeholder="Brand"
             value={brand}
             onChange={(event) => {
               setBrand(event.target.value);
@@ -120,7 +124,7 @@ const Publish = ({ token }) => {
 
           <input
             type="text"
-            placeholder="size"
+            placeholder="Size"
             value={size}
             onChange={(event) => {
               setSize(event.target.value);
@@ -129,7 +133,7 @@ const Publish = ({ token }) => {
 
           <input
             type="text"
-            placeholder="color"
+            placeholder="Color"
             value={color}
             onChange={(event) => {
               setColor(event.target.value);
@@ -138,8 +142,8 @@ const Publish = ({ token }) => {
 
           <input
             type="text"
-            placeholder="condition"
-            value={etat}
+            placeholder="Condition"
+            value={condition}
             onChange={(event) => {
               setCondition(event.target.value);
             }}
@@ -147,7 +151,7 @@ const Publish = ({ token }) => {
 
           <input
             type="text"
-            placeholder="city"
+            placeholder="City"
             value={city}
             onChange={(event) => {
               setCity(event.target.value);
@@ -155,20 +159,21 @@ const Publish = ({ token }) => {
           />
         </div>
 
-        <div>
+        <div className="sold-price">
           <input
             className="price"
             type="number"
-            placeholder="price"
+            placeholder="Price"
             value={price}
             onChange={(event) => {
               setPrice(event.target.value);
             }}
           />
+          <div className="coche">
+            <input type="checkbox" />
+            <label>Je suis intéressé(e) par les échanges</label>
+          </div>
         </div>
-
-        <input type="checkbox" />
-        <label>Je suis intéressé(e) par les échanges</label>
 
         <div className="validate">
           <input type="submit" value="Ajouter" />

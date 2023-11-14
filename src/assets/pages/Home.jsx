@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Home = () => {
+const Home = ({ token }) => {
   // const num = 1;
 
   const params = useParams();
@@ -13,6 +13,9 @@ const Home = () => {
   const [data, setData] = useState();
   console.log(data);
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigate = useNavigate();
+  console.log(token);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +42,7 @@ const Home = () => {
         <div className="picture-background">
           <div className="ready">
             <p>Prêts à faire du tri dans vos placards ? </p>
+
             <Link to="/login">
               <button>Commencer à vendre </button>
             </Link>

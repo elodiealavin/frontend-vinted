@@ -34,27 +34,39 @@ const Offer = () => {
     <p>Loading ...</p>
   ) : (
     <main>
-      <img src={data.product_image.url} alt="" />
-      <div>
-        <span>{data.product_price} €</span>
-        {data.product_details.map((detail) => {
-          // console.log(detail);
-          const elem = Object.keys(detail);
-          // console.log(elem);
-          const elems = elem[0];
-          // console.log(elems);
-          return (
-            <p key={elems}>
-              {elem} : {detail[elem]}
-            </p>
-          );
-        })}
-        <p>{data.product_name}</p>
-        <p>{data.product_description}</p>
-        {data.owner.account.avatar && (
-          <img src={data.owner.account.avatar.secure_url} alt="" />
-        )}
-        <button>Acheter</button>
+      <div className="offer-container">
+        <img src={data.product_image.url} alt="" />
+        <div className="offer-description">
+          <span className="offer-product-price">{data.product_price} €</span>
+          {data.product_details.map((detail) => {
+            // console.log(detail);
+            const elem = Object.keys(detail);
+            // console.log(elem);
+            const elems = elem[0];
+            // console.log(elems);
+            return (
+              <div className="offer-map">
+                <>
+                  <span className="elem-offer" key={elems}>
+                    {elem} :
+                  </span>
+                  <span className="elem-detail">{detail[elem]}</span>
+                </>
+              </div>
+            );
+          })}
+          <div className="description-user">
+            <p className="offer-title">{data.product_name}</p>
+            <div className="user-offer">
+              <p className="offer-detail">{data.product_description}</p>
+              {data.owner.account.avatar && (
+                <img src={data.owner.account.avatar.secure_url} alt="" />
+              )}
+              <span>{data.owner.account.username}</span>
+            </div>
+          </div>
+          <button className="offer-sold">Acheter</button>
+        </div>
       </div>
     </main>
   );
