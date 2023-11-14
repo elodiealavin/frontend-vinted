@@ -1,16 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
 const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
   const [picture, setPicture] = useState();
-  const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
+  //   const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
   const [decription, setDecription] = useState("");
   const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
-  const [etat, setEtat] = useState("");
+  const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState();
 
@@ -28,7 +29,7 @@ const Publish = ({ token }) => {
       formData.append("bran", brand);
       formData.append("size", size);
       formData.append("color", color);
-      formData.append("etat", etat);
+      formData.append("condition", condition);
       formData.append("city", city);
       formData.append("price", price);
       formData.append("picture", picture);
@@ -47,7 +48,7 @@ const Publish = ({ token }) => {
       console.log(response.data);
       setPictureFromCloudinary(response.data.secure_url);
 
-      navigate("/login");
+      navigate("/");
 
       //   console.log(response.data);
     } catch (error) {
@@ -55,22 +56,30 @@ const Publish = ({ token }) => {
     }
   };
 
-  return (
+  return token ? (
     <div>
       <form onSubmit={handleSubmit}>
         <h1> Vends ton arcticle</h1>
         <div className="picture-offer">
           <input
+            style={{ display: "none" }}
+            id="picture-input"
             type="file"
             onChange={(event) => {
               // console.log(event);
               setPicture(event.target.files[0]);
             }}
           />
-          {pictureFromCloudinary && (
-            <img src={pictureFromCloudinary} alt="veste" />
-          )}
         </div>
+
+        {picture && (
+          <img
+            style={{ height: "100px" }}
+            src={URL.createObjectURL(picture)}
+            alt="test"
+          />
+        )}
+
         <input
           type="text"
           placeholder="title"
@@ -79,14 +88,26 @@ const Publish = ({ token }) => {
             setTitle(event.target.value);
           }}
         />
-        <input
+
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          value={decription}
+          onChange={(event) => {
+            setDecription(event.target.value);
+          }}
+        ></textarea>
+        {/* <input
           type="text"
           placeholder="description"
           value={decription}
           onChange={(event) => {
             setDecription(event.target.value);
           }}
-        />
+        /> */}
+
         <div>
           <input
             type="text"
@@ -96,6 +117,7 @@ const Publish = ({ token }) => {
               setBrand(event.target.value);
             }}
           />
+
           <input
             type="text"
             placeholder="size"
@@ -104,6 +126,7 @@ const Publish = ({ token }) => {
               setSize(event.target.value);
             }}
           />
+
           <input
             type="text"
             placeholder="color"
@@ -112,14 +135,16 @@ const Publish = ({ token }) => {
               setColor(event.target.value);
             }}
           />
+
           <input
             type="text"
-            placeholder="etat"
+            placeholder="condition"
             value={etat}
             onChange={(event) => {
-              setEtat(event.target.value);
+              setCondition(event.target.value);
             }}
           />
+
           <input
             type="text"
             placeholder="city"
@@ -129,9 +154,11 @@ const Publish = ({ token }) => {
             }}
           />
         </div>
+
         <div>
           <input
             className="price"
+            type="number"
             placeholder="price"
             value={price}
             onChange={(event) => {
@@ -139,15 +166,17 @@ const Publish = ({ token }) => {
             }}
           />
         </div>
+
         <input type="checkbox" />
         <label>Je suis intéressé(e) par les échanges</label>
-        <Link to="/login">
-          <div className="validate">
-            <input type="submit" value="Ajouter" />
-          </div>
-        </Link>
+
+        <div className="validate">
+          <input type="submit" value="Ajouter" />
+        </div>
       </form>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

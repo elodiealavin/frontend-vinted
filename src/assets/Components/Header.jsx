@@ -44,7 +44,7 @@ const Header = ({ token, handleToken }) => {
       </div>
 
       <div>
-        <Link to="/publish">
+        <Link to={token ? "/publish" : "/login"}>
           <button className="sold">vends tes articles</button>
         </Link>
       </div>

@@ -39,7 +39,9 @@ const Home = () => {
         <div className="picture-background">
           <div className="ready">
             <p>Prêts à faire du tri dans vos placards ? </p>
-            <button>Commencer à vendre </button>
+            <Link to="/login">
+              <button>Commencer à vendre </button>
+            </Link>
           </div>
         </div>
 
