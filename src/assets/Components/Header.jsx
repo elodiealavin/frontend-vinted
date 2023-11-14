@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ token, handleToken }) => {
   console.log(handleToken);
+
   return (
     <header>
       <div>
@@ -19,6 +20,7 @@ const Header = ({ token, handleToken }) => {
         <input
           type="text"
           placeholder="Recherche des articles"
+
           // value={search}
         />
       </div>
