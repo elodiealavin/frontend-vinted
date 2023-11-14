@@ -446,14 +446,14 @@ img {
 /* --------------------- */
 
 .container-sold {
-  background-color: #d5e2e9;
+  background-color: rgb(214, 214, 214);
 }
 
 form {
   /* border: 1px lightgreen solid; */
   width: 1285px;
   margin: auto;
-  border: 1px lightslategray solid;
+  /* border: 1px lightslategray solid; */
 }
 form > h1 {
   font-size: 30px;
