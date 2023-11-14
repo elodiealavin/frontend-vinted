@@ -14,8 +14,12 @@ const Home = ({ token }) => {
   console.log(data);
   const [isLoading, setIsLoading] = useState(true);
 
-  const navigate = useNavigate();
-  console.log(token);
+  // const navigate = useNavigate();
+  // console.log(token);
+
+  // const redirection = () => {
+  //   navigate("/offer/publish");
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +31,8 @@ const Home = ({ token }) => {
 
         setData(response.data);
         setIsLoading(false);
+
+        // navigate("/");
       } catch (error) {
         // console.log(error);
       }
@@ -43,7 +49,7 @@ const Home = ({ token }) => {
           <div className="ready">
             <p>Prêts à faire du tri dans vos placards ? </p>
 
-            <Link to="/login">
+            <Link to="/offer/publish">
               <button>Commencer à vendre </button>
             </Link>
           </div>

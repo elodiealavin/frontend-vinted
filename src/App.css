@@ -237,32 +237,39 @@ form h2 {
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  height: 35px;
-  background-color: azure;
+  /* margin-bottom: 20px; */
+  height: 40px;
+  /* background-color: azure; */
 }
 .username {
+  /* background-color: aquamarine; */
   border: none;
   border-bottom: lightpink 1px solid;
-  width: 220px;
+  width: 350px;
   font-size: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
+  padding: 10px;
 }
 .email {
   border: none;
   border-bottom: lightpink 1px solid;
   font-size: 15px;
-  margin-bottom: 5px;
+  width: 350px;
+  margin-bottom: 25px;
+  padding: 10px;
 }
 
 .password {
   border: none;
   border-bottom: lightpink 1px solid;
   font-size: 15px;
-  margin-bottom: 5px;
+  width: 350px;
+  margin-bottom: 25px;
+  padding: 10px;
 }
 .checkbox-container {
-  margin-top: 20px;
+  margin-top: 150px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +296,7 @@ form h2 {
 form p {
   padding: 10px;
   color: gray;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* --------------------- */
